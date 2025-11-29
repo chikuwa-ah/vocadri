@@ -106,6 +106,7 @@ const question = (wordList) => {
     const showNumber = document.getElementById("showNumber");
     showNumber.textContent = `${1} / ${wordList.length}`;
     meanSpace.textContent = wordList[0].mean;
+    typeSpace.textContent = wordList[0].word.length > 1 ? wordList[0].word.slice(0, 1) : '';
     if (weakList[`${wordList[0].number}`]) {
         showWeak.classList.remove("weak-false");
         showWeak.classList.add("weak-true");
@@ -148,7 +149,7 @@ const question = (wordList) => {
             showNumber.textContent = `${index + 1} / ${wordList.length}`;
             next = false;
             meanSpace.textContent = wordList[index].mean;
-            typeSpace.textContent = "";
+            typeSpace.textContent = wordList[index].word.length > 1 ? wordList[index].word.slice(0, 1) : '';
             if (weakList[`${wordList[index].number}`]) {
                 showWeak.classList.remove("weak-false");
                 showWeak.classList.add("weak-true");

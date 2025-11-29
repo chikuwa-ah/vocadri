@@ -192,6 +192,7 @@ const typing = (wordList, choiceScore, missList, startTime, grade) => {
     const meanSpace = document.getElementById("meanText");
     const typeSpace = document.getElementById("typingSpace");
     meanSpace.textContent = meanText(index, wordList);
+    typeSpace.textContent = wordList[index].word.length > 1 ? wordList[index].word.slice(0, 1) : '';
 
     const keyboard = document.querySelector(".keyboard");
     keyboard.addEventListener("touchend", (e) => {
@@ -222,7 +223,7 @@ const typing = (wordList, choiceScore, missList, startTime, grade) => {
             }
             next = false;
             meanSpace.textContent = meanText(index, wordList);
-            typeSpace.textContent = "";
+            typeSpace.textContent = wordList[index].word.length > 1 ? wordList[index].word.slice(0, 1) : '';
             enterKey.textContent = "決定";
             typeSpace.style.color = "#333333";
             typeSpace.parentNode.style.backgroundColor = "#ffffff";
@@ -256,7 +257,7 @@ const typingEnd = (choiceScore, typingScore, missList, startTime, grade) => {
     select.addEventListener(
         "click",
         (e) => {
-            location.href = "../index.html";
+            location.href = "./index.html";
             return;
         },
         { once: true }
@@ -266,7 +267,7 @@ const typingEnd = (choiceScore, typingScore, missList, startTime, grade) => {
 const displayResult = (choiceScore, typingScore, startTime, grade) => {
     const time = Date.now();
     const gap = (time - startTime) / 1000;
-    const timeBonus = 150 - gap > 0 ? 150 - gap : 0;
+    const timeBonus = 200 - gap > 0 ? 200 - gap : 0;
     const gradeBonus = grade / 5 + 1
     const score = Math.floor((choiceScore * 26 + typingScore * 39 + timeBonus * 2.1) * gradeBonus);
     const result = document.querySelector('.result');

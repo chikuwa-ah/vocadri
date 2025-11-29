@@ -1937,7 +1937,7 @@ const WORDS = {
     },
     318: {
         word: "had",
-        mean: "動助:have,hasの過去・過去分詞形",
+        mean: "動助:haveの過去形",
         grade: 3,
         number: 318
     },
@@ -4307,7 +4307,7 @@ const WORDS = {
     },
     713: {
         word: "the",
-        mean: "で)ズィ］",
+        mean: "定:定冠詞 あの その",
         grade: 3,
         number: 713
     },
@@ -6905,7 +6905,7 @@ const WORDS = {
     },
     1146: {
         word: "whoever",
-        mean: "代(～する)人はだれでも,だれが～とも",
+        mean: "代:(～する)人はだれでも,だれが～とも",
         grade: 2,
         number: 1146
     },
@@ -6971,7 +6971,7 @@ const WORDS = {
     },
     1157: {
         word: "adopt",
-        mean: "動:(方法・意見などを)採用する,選ぶ,(人を)受け入れる,承認する",
+        mean: "動:採用する,選ぶ,(人を)受け入れる,承認する",
         grade: 1,
         number: 1157
     },
@@ -7883,7 +7883,7 @@ const WORDS = {
     },
     1309: {
         word: "negative",
-        mean: "名:(写真の)ネガ,否定",
+        mean: "名:否定",
         grade: 1,
         number: 1309
     },
