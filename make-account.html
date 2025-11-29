@@ -1,0 +1,50 @@
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zensho Vocadri!</title>
+    <link rel="icon" href="./icons/favicon.ico" id="favicon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/account.css" />
+    <script src="./script/makeAccount.js"></script>
+    <script src="./script/apiKey.js"></script>
+</head>
+
+<body>
+    <section class="head">
+        <header>
+            <a href="./index.html" id="toTop">
+                <h1>Zensho Vocadri!</h1>
+            </a>
+        </header>
+
+        <div class="display">
+            <h2>アカウント新規作成</h2>
+            <div class="input">
+                <span>ユーザーネーム</span>
+                <input type="text" id="user-name" />
+                <span>パスワード</span>
+                <input type="text" pattern="[A-Za-z0-9]*" inputmode="latin" id="password" />
+            </div>
+
+            <div class="decision">
+                <span id="decision-button">決定</span>
+            </div>
+        </div>
+
+        <div class="during">
+            <div id="back"></div>
+
+            <svg width="60" height="60" viewBox="-60 -60 120 120">
+                <circle r="50" />
+            </svg>
+        </div>
+    </section>
+    <div class="none"></div>
+</body>
+
+</html>

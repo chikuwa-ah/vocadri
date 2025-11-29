@@ -1,0 +1,16 @@
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    height: 100vh;
+}
+
+.login a {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    font-size: 20px;
+    color: #75cad5;
+    text-decoration: none;
+}

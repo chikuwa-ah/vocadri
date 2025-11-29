@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>単語カード | Zensho Vocadri!</title>
+        <link rel="icon" href="./icons/favicon.ico" id="favicon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <link rel="stylesheet" href="./style/card.css" />
+        <link rel="stylesheet" href="./style/wordList.css" />
+        <script src="./script/words.js"></script>
+        <script src="./script/card.js"></script>
+        <script src="./script/apiKey.js"></script>
+    </head>
+
+    <body>
+        <section class="origin">
+            <section class="head">
+                <header>
+                    <a href="./index.html">
+                        <h1>Zensho Vocadri!</h1>
+                    </a>
+                </header>
+
+                <h1 class="sub-title">単語カード</h1>
+            </section>
+
+            <!-- 設定画面 -->
+            <div class="setup-container" id="setup">
+                <h2>学習設定</h2>
+
+                <label style="flex-direction: row; justify-content: space-between; align-items: center">
+                    <div class="group-title">出題範囲:</div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center">
+                        <input type="number" id="startIndex" value="1" min="1" /> 〜
+                        <input type="number" id="endIndex" value="1428" min="1" />
+                    </div>
+                </label>
+
+                <div class="select-container">
+                    <select id="range-select">
+                        <option value="0">---------</option>
+                        <option value="1-100">3級 : 1 - 100</option>
+                        <option value="101-200">3級 : 101 - 200</option>
+                        <option value="201-300">3級 : 201 - 300</option>
+                        <option value="301-400">3級 : 301 - 400</option>
+                        <option value="401-500">3級 : 401 - 500</option>
+                        <option value="501-600">3級 : 501 - 600</option>
+                        <option value="601-700">3級 : 601 - 700</option>
+                        <option value="701-800">3級 : 701 - 800</option>
+                        <option value="801-817">3級 : 801 - 817</option>
+                        <option value="818-917">2級 : 818 - 917</option>
+                        <option value="918-1017">2級 : 918 - 1017</option>
+                        <option value="1018-1117">2級 : 1018 - 1117</option>
+                        <option value="1118-1151">2級 : 1118 - 1151</option>
+                        <option value="1152-1251">1級 : 1152 - 1251</option>
+                        <option value="1252-1351">1級 : 1252 - 1351</option>
+                        <option value="1352-1428">1級 : 1352 - 1428</option>
+                    </select>
+                </div>
+
+                <div class="group-container">
+                    <div class="group-title">出題方法</div>
+                    <div class="button-group" data-group="direction">
+                        <div class="button-item active" data-value="0">英 → 日</div>
+                        <div class="button-item" data-value="1">日 → 英</div>
+                    </div>
+                </div>
+
+                <div class="group-container">
+                    <div class="group-title">出題順</div>
+                    <div class="button-group" data-group="order">
+                        <div class="button-item active" data-value="0">順番</div>
+                        <div class="button-item" data-value="1">ランダム</div>
+                    </div>
+                </div>
+
+                <div class="group-container">
+                    <div class="group-title">苦手単語モード</div>
+                    <div class="button-group" data-group="weakOnly">
+                        <div class="button-item active" data-value="0">OFF</div>
+                        <div class="button-item" data-value="1">ON</div>
+                    </div>
+                </div>
+
+                <button id="startBtn">スタート</button>
+            </div>
+        </section>
+
+        <!-- 単語カード画面 -->
+        <div class="card-container" id="cardSection">
+            <button class="back-button" id="backBtn">← 設定に戻る</button>
+            <div class="card" id="card">
+                <div class="card-text">
+                    <p id="numberText"></p>
+                    <h2 id="wordText"></h2>
+                    <p id="meanText" class="card-mean"></p>
+                </div>
+            </div>
+            <div class="show-number" id="showNumber"></div>
+
+            <div class="show-weak weak-false" id="isWeak">苦手</div>
+        </div>
+
+        <div class="card-end" id="cardEnd">
+            <div class="end-button">設定に戻る</div>
+        </div>
+    </body>
+</html>

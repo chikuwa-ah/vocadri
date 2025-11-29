@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ランキング | Zensho Vocadri!</title>
+    <link rel="icon" href="./icons/favicon.ico" id="favicon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/wordList.css" />
+    <link rel="stylesheet" href="./style/rank.css" />
+    <script src="./script/ranking.js"></script>
+    <script src="./script/apiKey.js"></script>
+</head>
+
+<body>
+    <section class="head">
+        <header>
+            <a href="./index.html" class="return">
+                <h1>Zensho Vocadri!</h1>
+            </a>
+
+            <h1 class="sub-title">ランキング</h1>
+        </header>
+
+        <select id="section-select">
+            <option value="2">今日のスコア</option>
+            <option value="1">今週のスコア</option>
+            <option value="0">累計スコア</option>
+        </select>
+    </section>
+
+    <section class="display">
+        <div class="table">
+            <div class="container" id="wordList">
+            </div>
+        </div>
+    </section>
+
+    <div class="during">
+        <div id="back"></div>
+
+        <svg width="60" height="60" viewBox="-60 -60 120 120">
+            <circle r="50" />
+        </svg>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>単語一覧 | Zensho Vocadri!</title>
+        <link rel="icon" href="./icons/favicon.ico" id="favicon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <link rel="stylesheet" href="./style/wordList.css" />
+        <script src="./script/words.js"></script>
+        <script src="./script/wordList.js"></script>
+    </head>
+
+    <body>
+        <section class="head">
+            <header>
+                <a href="./index.html" class="return">
+                    <h1>Zensho Vocadri!</h1>
+                </a>
+            </header>
+
+            <select id="section-select">
+                <option value="0">---------</option>
+                <option value="1-100">3級 : 1 - 100</option>
+                <option value="101-200">3級 : 101 - 200</option>
+                <option value="201-300">3級 : 201 - 300</option>
+                <option value="301-400">3級 : 301 - 400</option>
+                <option value="401-500">3級 : 401 - 500</option>
+                <option value="501-600">3級 : 501 - 600</option>
+                <option value="601-700">3級 : 601 - 700</option>
+                <option value="701-800">3級 : 701 - 800</option>
+                <option value="801-817">3級 : 801 - 817</option>
+                <option value="818-917">2級 : 818 - 917</option>
+                <option value="918-1017">2級 : 918 - 1017</option>
+                <option value="1018-1117">2級 : 1018 - 1117</option>
+                <option value="1118-1151">2級 : 1118 - 1151</option>
+                <option value="1152-1251">1級 : 1152 - 1251</option>
+                <option value="1252-1351">1級 : 1252 - 1351</option>
+                <option value="1352-1428">1級 : 1352 - 1428</option>
+            </select>
+        </section>
+
+        <section class="display">
+            <div class="table">
+                <div class="container" id="wordList">
+                    <!-- 単語テーブル -->
+                </div>
+            </div>
+        </section>
+
+        <div class="pop-overlay" onclick="closePopUp();"></div>
+        <div class="pop-up">
+            <h2 id="pop-word">Word</h2>
+            <p id="pop-mean">意味耳耳</p>
+        </div>
+    </body>
+</html>
