@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+input, textarea, select {
+    font-size: 16px;
+}
+
 header {
     margin-bottom: 3rem;
     text-align: center;

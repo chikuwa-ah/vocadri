@@ -2590,8 +2590,8 @@ const WORDS = {
         number: 426
     },
     427: {
-        word: "ma’am",
-        mean: "名:奥様",
+        word: "wife",
+        mean: "名:妻",
         grade: 3,
         number: 427
     },

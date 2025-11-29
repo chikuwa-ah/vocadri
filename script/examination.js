@@ -421,10 +421,10 @@ const wordTouchEvent = () => {
             if (style.backgroundColor === "rgb(255, 255, 255)") {
                 parent.style.backgroundColor = "#b3f5ff";
                 weakList[0][`${number}`] = true;
-                setLocalStorage("type", weakList[1]);
+                setLocalStorage("words", weakList[0]);
             } else {
                 weakList[0][`${number}`] = false;
-                setLocalStorage("type", weakList[1]);
+                setLocalStorage("words", weakList[0]);
 
                 if (weakList[0][`${number}`]) {
                     parent.style.backgroundColor = "#b3f5ff";

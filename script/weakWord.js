@@ -17,7 +17,7 @@ const createTable = (data) => {
         }
         const selector = document.getElementById("section-select");
         if (selector.value === "2") {
-            if (weakTypeList[`type-${word.number}`]) {
+            if (weakTypeList[`${word.number}`]) {
                 row.style.backgroundColor = "#cbffb3";
             }
         }
