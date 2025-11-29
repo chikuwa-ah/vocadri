@@ -468,6 +468,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById('rank').addEventListener('touchend', () => {
-        location.href = "../ranking.html";
+        location.href = "./ranking.html";
     })
 });
