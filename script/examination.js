@@ -291,13 +291,11 @@ const displayResult = (choiceScore, typingScore, startTime, grade) => {
         </div>
     `;
 
-    localStorage.setItem('dailyScore', score);
     const CumulativeScore = Number(localStorage.getItem('CumulativeScore'));
     localStorage.setItem('CumulativeScore', CumulativeScore + score);
     const WeeklyScore = Number(localStorage.getItem('WeeklyScore'));
     localStorage.setItem('WeeklyScore', WeeklyScore + score);
-    const DailyScore = Number(localStorage.getItem('DailyScore'));
-    localStorage.setItem('DailyScore', DailyScore);
+    localStorage.setItem('DailyScore', score);
 
     const now = new Date();
     const month = now.getMonth() + 1;
