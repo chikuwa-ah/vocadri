@@ -373,13 +373,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const start = document.getElementById("startIndex");
         const end = document.getElementById("endIndex");
         const section = selector.value;
-        if (section !== "0") {
-            start.value = (section - 1) * 100 + 1;
-            end.value = section * 100;
-        } else {
-            start.value = 1;
-            end.value = 1900;
-        }
+        start.value = section.split('-')[0];
+        end.value = section.split('-')[1];
     });
 
     editData();
