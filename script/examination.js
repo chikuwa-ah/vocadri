@@ -268,8 +268,7 @@ const displayResult = (choiceScore, typingScore, startTime, grade) => {
     const time = Date.now();
     const gap = (time - startTime) / 1000;
     const timeBonus = 200 - gap > 0 ? 200 - gap : 0;
-    const gradeBonus = grade / 5 + 1
-    const score = Math.floor((choiceScore * 26 + typingScore * 39 + timeBonus * 2.1) * gradeBonus);
+    const score = Math.floor((choiceScore * 56 + typingScore * 139) * (grade + timeBonus / 20));
     const result = document.querySelector('.result');
     result.innerHTML = `
             <div class="title">成績</div>
