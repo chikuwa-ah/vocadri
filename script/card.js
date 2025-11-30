@@ -117,20 +117,25 @@ const enToJa = (wordList) => {
             showWeak.classList.remove("weak-false");
             showWeak.classList.add("weak-true");
             weakList[0][`${wordList[index].number}`] = true;
-            weakList[1][`${wordList[index].number}`] = true;
         } else {
             showWeak.classList.remove("weak-true");
             showWeak.classList.add("weak-false");
             weakList[0][`${wordList[index].number}`] = false;
-            weakList[1][`${wordList[index].number}`] = false;
         }
+
+        const wordConditions = {};
+        for (let index = 1; index < 1430; index++) {
+            wordConditions[`${index}`] = weakList[0][index];
+        }
+        const parsedJSON = JSON.stringify(wordConditions);
+        localStorage.setItem("words", parsedJSON);
     });
 };
 
 const jaToEn = (wordList) => {
     let index = 0;
     let word = false;
-    const weakList = [getLocalStorage("words"), getLocalStorage("tyoe")];
+    const weakList = [getLocalStorage("words"), getLocalStorage("type")];
 
     const card = document.getElementById("card");
     const wordSpace = document.getElementById("wordText");
@@ -139,7 +144,7 @@ const jaToEn = (wordList) => {
     const showWeak = document.getElementById("isWeak");
     const showNumber = document.getElementById("showNumber");
     meanSpace.textContent = wordList[0].mean;
-    if (JSON.parse(localStorage.getItem(`${wordList[0].number}`))) {
+    if (weakList[0][`${wordList[index].number}`]) {
         showWeak.classList.remove("weak-false");
         showWeak.classList.add("weak-true");
     } else {
@@ -154,13 +159,15 @@ const jaToEn = (wordList) => {
 
         if (word) {
             index++;
-            const card = localStorage.getItem('Card');
-            localStorage.setItem('Card', Number(card) + 1);
+            const cardResist = localStorage.getItem('Card');
+            localStorage.setItem('Card', Number(cardResist) + 1);
             if (index >= wordList.length) {
-                const keys = ["words", "type"];
-                for (let i = 0; i < weakList.length; i++) {
-                    localStorage.setItem(keys[i], weakList[i]);
+                const wordConditions = {};
+                for (let index = 1; index < 1430; index++) {
+                    wordConditions[`${index}`] = weakList[0][index];
                 }
+                const parsedJSON = JSON.stringify(wordConditions);
+                localStorage.setItem("words", parsedJSON);
                 cardEnd();
                 return;
             }
@@ -169,7 +176,7 @@ const jaToEn = (wordList) => {
             word = false;
             meanSpace.textContent = wordList[index].mean;
             wordSpace.textContent = "";
-            if (JSON.parse(localStorage.getItem(`${wordList[index].number}`))) {
+            if (weakList[0][`${wordList[index].number}`]) {
                 showWeak.classList.remove("weak-false");
                 showWeak.classList.add("weak-true");
             } else {
@@ -193,14 +200,19 @@ const jaToEn = (wordList) => {
         if (showWeak.classList.contains("weak-false")) {
             showWeak.classList.remove("weak-false");
             showWeak.classList.add("weak-true");
-            localStorage.setItem(`${wordList[index].number}`, true);
-            localStorage.setItem(`type-${wordList[index].number}`, true);
+            weakList[0][`${wordList[index].number}`] = true;
         } else {
-            localStorage.setItem(`${wordList[index].number}`, false);
-            localStorage.setItem(`type-${wordList[index].number}`, false);
             showWeak.classList.remove("weak-true");
             showWeak.classList.add("weak-false");
+            weakList[0][`${wordList[index].number}`] = false;
         }
+
+        const wordConditions = {};
+        for (let index = 1; index < 1430; index++) {
+            wordConditions[`${index}`] = weakList[0][index];
+        }
+        const parsedJSON = JSON.stringify(wordConditions);
+        localStorage.setItem("words", parsedJSON);
     });
 };
 

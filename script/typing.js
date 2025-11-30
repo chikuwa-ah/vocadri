@@ -208,6 +208,13 @@ const question = (wordList) => {
             showWeak.classList.add("weak-false");
             weakList[`${wordList[index].number}`] = false;
         }
+
+        const wordConditions = {};
+        for (let index = 1; index < 1430; index++) {
+            wordConditions[`${index}`] = weakList[index];
+        }
+        const parsedJSON = JSON.stringify(wordConditions);
+        localStorage.setItem("type", parsedJSON);
     });
 };
 
