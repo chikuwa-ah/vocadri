@@ -15,7 +15,7 @@ const createAllWordArray = (settings) => {
 };
 
 const createWeakWordArray = (settings) => {
-    const weakList = getLocalStorage("words");
+    const weakList = getLocalStorage("type");
     const array = [];
     for (let i = 0; i < settings.end - settings.start + 1; i++) {
         if (weakList[`${i + settings.start}`]) {
