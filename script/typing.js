@@ -182,6 +182,12 @@ const question = (wordList) => {
                 showWeak.classList.remove("weak-false");
                 showWeak.classList.add("weak-true");
                 weakList[`${wordList[index].number}`] = true;
+                const wordConditions = {};
+                for (let index = 1; index < 1430; index++) {
+                    wordConditions[`${index}`] = weakList[index];
+                }
+                const parsedJSON = JSON.stringify(wordConditions);
+                localStorage.setItem("type", parsedJSON);
                 missList.push(wordList[index]);
                 setTimeout(() => {
                     if (next) {
