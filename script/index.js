@@ -36,7 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const now = new Date();
     const week = now.getDay();
-    if (week === 1) {
+    const examPlay = localStorage.getItem('examPlay').split('/');
+    if (week === 1 && (Number(examPlay[0]) !== now.getMonth() + 1 || Number(examPlay[1]) !== now.getDate())) {
         localStorage.setItem('WeeklyScore', 0);
     }
 
