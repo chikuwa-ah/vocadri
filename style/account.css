@@ -1,0 +1,99 @@
+.display {
+    border: #75cad5 solid 3px;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80vw;
+}
+
+.input span {
+    display: block;
+    margin: 10px 0;
+}
+
+.input input {
+    width: 100%;
+    border: 1px solid #555;
+    border-radius: 3px;
+}
+
+.decision {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.decision span {
+    margin: auto;
+    padding: 8px 20px;
+    display: inline;
+    border: #75cad5 2px solid;
+    background-color: #75cad5;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.new-make {
+    margin: 25px 0;
+}
+
+.new-make a {
+    color: #75cad5;
+    text-decoration: none;
+}
+
+.during {
+    display: none;
+}
+
+#back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000004b;
+}
+
+svg {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+}
+
+circle {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 20;
+    stroke-linecap: round;
+    animation: wax-and-wane 2s cubic-bezier(0.5, 0, 0.5, 1) infinite, rotate 1.5s linear infinite;
+}
+
+@keyframes wax-and-wane {
+    0% {
+        stroke-dasharray: 236 78;
+        stroke-dashoffset: -37;
+    }
+
+    50% {
+        stroke-dasharray: 20 294;
+        stroke-dashoffset: -304;
+    }
+
+    100% {
+        stroke-dasharray: 236 78;
+        stroke-dashoffset: -351;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.none {
+    display: none;
+}

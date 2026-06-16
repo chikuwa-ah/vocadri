@@ -1,0 +1,76 @@
+.sub-title {
+    margin-top: 2rem;
+}
+
+.during {
+    display: none;
+}
+
+#back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000004b;
+}
+
+svg {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+}
+
+circle {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 20;
+    stroke-linecap: round;
+    animation: wax-and-wane 2s cubic-bezier(0.5, 0, 0.5, 1) infinite, rotate 1.5s linear infinite;
+}
+
+@keyframes wax-and-wane {
+    0% {
+        stroke-dasharray: 236 78;
+        stroke-dashoffset: -37;
+    }
+
+    50% {
+        stroke-dasharray: 20 294;
+        stroke-dashoffset: -304;
+    }
+
+    100% {
+        stroke-dasharray: 236 78;
+        stroke-dashoffset: -351;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.cell.rank {
+    flex: 1;
+    border-right: 1px solid #ccc;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.cell.name {
+    border-right: 1px solid #ccc;
+    flex: 5;
+    font-size: 0.8rem;
+}
+
+.cell.score {
+    flex: 2;
+    font-size: 0.8rem;
+}
